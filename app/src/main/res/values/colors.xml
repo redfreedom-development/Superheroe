@@ -2,4 +2,9 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="low">#FF0000</color> <!-- Rojo -->
+    <color name="medium_low">#FF9800</color> <!-- Naranja -->
+    <color name="medium_higth">#0277BD</color> <!-- azul -->
+    <color name="higth">#4CAF50</color> <!-- Verde -->
+
 </resources>

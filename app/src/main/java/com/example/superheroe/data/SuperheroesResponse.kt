@@ -3,43 +3,28 @@ package com.example.superheroe.data
 import com.google.gson.annotations.JsonAdapter
 import com.google.gson.annotations.SerializedName
 
-class SuperheroesResponse (
-    @SerializedName("response") val response:String,
-    @SerializedName("results-for") val resultsFor:String,
-    @SerializedName("results") val results:List<Superhero>
-) {
-}
-
-class Superhero (
-    @SerializedName("id") val id:String,
-    @SerializedName("name") val name:String,
-   // @SerializedName("powerstats") val stats:Stats,
-    @SerializedName("biography") val biography:Biography,
-    @SerializedName("work") val work:Work,
-    @SerializedName("image") val image:Image
+data class SuperheroResponse (
+    @SerializedName ("response") val response: String,
+    @SerializedName ("results-for") val resultsFor: String,
+    @SerializedName ("results") val results: List<Superhero>
 ) { }
 
-/*class Stats (
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("intelligence") val intelligence: Int,
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("strength") val strength: Int,
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("speed") val speed: Int,
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("durability") val durability: Int,
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("power") val power: Int,
-    @JsonAdapter(IntegerAdapter::class) @SerializedName("combat") val combat: Int,
-) { }*/
-
-class Biography (
-    @SerializedName("full-name") val realName:String,
-    @SerializedName("place-of-birth") val placeOfBirth:String,
-    @SerializedName("alignment") val alignment:String,
-    @SerializedName("publisher") val publisher:String
+data class Superhero (
+    @SerializedName ("id") val id: String,
+    @SerializedName ("name") val name: String,
+    @SerializedName("powerstats") val powerstats: Stats,
+    @SerializedName ("image") val image: Image
 ) { }
 
-class Work (
-    @SerializedName("occupation") val occupation:String,
-    @SerializedName("base") val base:String
+data class Image (
+    @SerializedName ("url") val url: String,
 ) { }
 
-class Image (
-    @SerializedName("url") val url:String
+data class Stats (
+   @SerializedName("intelligence") val intelligence: Float,
+     @SerializedName("strength") val strength: Float,
+     @SerializedName("speed") val speed: Float,
+    @SerializedName("durability") val durability: Float,
+  @SerializedName("power") val power: Float,
+   @SerializedName("combat") val combat: Float,
 ) { }
